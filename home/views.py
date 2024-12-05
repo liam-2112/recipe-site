@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views import generic
+from .models import Post
 
-class HomePage(TemplateView):
-    """
-    Displays home page"
-    """
-    template_name = 'index.html'
+class PostList(generic.ListView):
+    queryset = Post.objects.all()
+    template_name = "post_list.html"
