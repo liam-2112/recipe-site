@@ -7,8 +7,8 @@ from .models import MenuSection, MenuItem
 class TestMenuView(TestCase):
 
     def setUp(self):
-        self.menu_section = MenuSection.objects.create(title="Drinks")
+        self.menu_section = MenuSection.objects.create(title="Rice Dishes")
         
         self.menu_item = MenuItem(section=self.menu_section,
-            title="Compot",  ingredients="Berries and fruits", description="Sweet drink")
+            title="Red Rice",  ingredients="Rice, onions and chicken", description="Middle eastern food")
         self.menu_item.save()

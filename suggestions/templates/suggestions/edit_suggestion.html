@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.is_authenticated and suggestion.author == user%}
+<div class="container col-md-4 col-12 offset-md-4 mt-3">
+    <h2>Edit Suggestion</h2>
+    <form method="post">
+        <h4>Rating:</h4>
+        <div class="star-rating">
+          {% for radio in suggestion_form.score %}
+            {{ radio.tag }}
+            <label for="{{ radio.id_for_label }}"></label>
+          {% endfor %}
+        </div>
+        {% csrf_token %}
+        {{ suggestion_form.title|as_crispy_field }}
+        {{ suggestion_form.body|as_crispy_field }}
+        <button type="submit" class="btn btn-primary update-btn">Update Suggestion</button>
+        <a href="{% url 'suggestions' %}" class="btn btn-secondary w-25">Cancel</a>      
+
+    </form>
+</div>
+{% endif %}
+{% endblock %}

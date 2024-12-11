@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'home' as main_url %}
 {% url 'recipes' as recipes_url %}
+{% url 'suggestions' as suggestions_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -50,6 +51,10 @@
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == recipes_url %}active{% endif %}" aria-current="page"
                             href="{% url 'recipes' %}"><strong>Recipes</strong></a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link {% if request.path == suggestions_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'suggestions' %}">Suggestions</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item ms-auto">
