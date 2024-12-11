@@ -1,16 +1,24 @@
 from django.shortcuts import render
-from .models import Recipes
+from django.views.generic import TemplateView
+from .models import MenuSection, MenuItem
 
-# create your views here
 
-def recipes_list(request):
+# Create your views here.
+
+
+class MenuPage(TemplateView):
     """
-    Renders the Recipes page
+    Displays menu page
     """
-    recipes = Recipes.objects.all().order_by('-updated_on').first()
+    template_name = 'recipes/recipes.html'
 
-    return render(
-        request,
-        "recipes/recipes.html",
-        {"recipes": recipes},
-    )
+def menu_view(request):
+    menu_sections = MenuSection.objects.all()
+    menu_items = MenuItem.objects.all().select_related('section')
+
+    context = {
+        "menu_sections" : menu_sections,
+        "menu_items" : menu_items,
+    }
+    
+    return render(request, 'recipes/recipes.html', context)

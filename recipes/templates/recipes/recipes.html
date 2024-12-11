@@ -45,7 +45,7 @@
         <div class="row menu-item mb-4">
             <div class=" col-3 mx-auto img-container pt-4">
                 {% if "placeholder" in item.image.url %}
-                <img src="{% static 'media/logo.webp' %}" alt="placeholder-image" class="img-fluid opacity">
+                <img src="{% static 'images/default.webp' %}" alt="placeholder-image" class="img-fluid opacity">
                 {% else %}
                 <img class="img-fluid img-zoom" src=" {{ item.image.url }}" alt="{{ item.title }}">
                 {% endif %}
