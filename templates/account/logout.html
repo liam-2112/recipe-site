@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container auth-model card">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign Out" %}</h3>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-8 mt-3 offset-md-2 mb-4">
 
             <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}

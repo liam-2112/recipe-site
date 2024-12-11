@@ -8,6 +8,6 @@ from .models import Suggestion
 
 @admin.register(Suggestion)
 class SuggestionAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'author', 'score', 'approved', 'created_on')
+    list_display = ('title', 'author', 'approved', 'created_on')
     list_filter = ['created_on']
     

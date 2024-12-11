@@ -5,9 +5,9 @@
 
 <div class="container mx-auto py-0">
   {% if user.is_authenticated %}
-  <p><a href="#write-suggestion" class="m-3 link">Leave a suggestion <i class="fa-regular fa-comments"></i></a></p>
+  <p><a href="#write-suggestion" class="m-3 link">Type a suggestion <i class="fa-regular fa-comments"></i></a></p>
   {% else %}
-  <p><a href="{{ login_url }}" class="m-3 link">Log in</a>to leave a suggestion</p>
+  <p><a href="{{ login_url }}" class="m-3 link">Log in</a>to type a suggestion</p>
   {% endif %}
   <h1 class="text-center mb-4">Suggestions</h1>
 
