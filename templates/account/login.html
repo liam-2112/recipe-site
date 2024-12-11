@@ -7,19 +7,19 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container auth-model card">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <h1 class="d-none">Sign In</h1>
+        <div class="col-md-8 mt-3 offset-md-2 text-center">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
+            <p> {% blocktrans %}Welcome to <strong>Recipe Manager</strong>. To leave suggestions for the site, please log in. <br>
+                <em>If you have not created an account yet, then sign up first.</em> -- <a class="link" href="{{ signup_url }}"><strong>Register</strong></a> --
+                {% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-8 px-3 mt-3 offset-md-2 mb-4">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
