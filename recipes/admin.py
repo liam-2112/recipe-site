@@ -1,9 +1,19 @@
 from django.contrib import admin
-from .models import Recipes
 from django_summernote.admin import SummernoteModelAdmin
+from .models import MenuSection, MenuItem
 
-# register models here
-@admin.register(Recipes)
-class RecipesAdmin(SummernoteModelAdmin):
+# Register your models here.
 
-    summernote_fields = ('content',)
+
+@admin.register(MenuSection)
+class MenuSectionAdmin(SummernoteModelAdmin):
+
+    list_display = ['title']
+
+
+@admin.register(MenuItem)
+class MenuItemAdmin(admin.ModelAdmin):
+
+    list_display = ('title', 'ingredients', 'section', 'created_on')
+    search_fields = ['title', 'ingredients']
+    list_filter = ['section', 'created_on']
