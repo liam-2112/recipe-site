@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background: url("../media/bg.webp") no-repeat center center/cover;
+    background: url("../images/default.webp") no-repeat center center/cover;
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: overlay;
     width: 100%;

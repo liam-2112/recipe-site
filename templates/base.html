@@ -32,7 +32,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white opacity">
         <div class="container-fluid">
-            <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static '' %}" alt=""
+            <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt=""
                     class="logo {% if request.path == home_url %} d-lg-none {% endif %}"><span
                     class="{% if request.path == home_url %} d-lg-none {% endif %}">Recipe Manager</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
