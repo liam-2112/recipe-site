@@ -23,6 +23,11 @@ body {
     justify-content: center;
 }
 
+.navbar-color{
+    background-color: #612c00;
+    color: black;
+}
+
 
 #intro p {
     font-weight: 200;
@@ -117,6 +122,12 @@ body {
     overflow: hidden;
 }
 
+.img-same {
+    width: 600px;   /* Restrict image size to fit the column */
+    height: 400px; /* Set a consistent height */
+    object-fit: cover;
+  }
+
 /* Zooming images when you clicking on them */
 .img-zoom {
     object-fit: cover;
@@ -136,18 +147,15 @@ body {
     z-index: 1000;
 }
 
-.price {
-    font-size: .8rem;
-}
 
 .link {
     text-decoration: none;
-    color: #fff;
+    color: #a94c00;
     font-weight: bold;
 }
 
 .link:hover {
-    background-color: white;
+    background-color: #a94c00;
     color: black;
 }
 
@@ -160,21 +168,23 @@ body {
 
 /* Styling buttons */
 .edit_btn {
-    background-color: #15734796;
-    border-color: #124a30;
+    background-color: #00000082;
+    border-color: #047e45;
+    color: #047e45;
     padding: 0 10px;
 }
 
 .delete_btn {
-    background-color: #dc354582;
-    border-color: #801721;
-    color: white;
+    background-color: #00000082;
+    border-color: #9f0202;
+    color: #9f0202;
     padding: 0 10px;
 }
 
 .update-btn {
-    background-color: #055910cc;
-    border-color: #093f10f5;
+    background-color: #00000082;
+    border-color: #3c00bef5;
+    color: #3c00bef5;
 }
 
 .update-btn:hover {
@@ -189,8 +199,15 @@ body {
 }
 
 .btn-signup {
-    background-color: rgba(101, 98, 98, 0.567);
-    color: #fff;
+    background-color: rgb(0, 0, 0);
+    border-color: #a94c00;
+    color: #ffffff;
+}
+
+.btn-signup:hover {
+    background-color: #a94c00;
+    border-color: #a94c00;
+    color: black;
 }
 
 /* Styling stars-raiting on review page*/

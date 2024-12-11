@@ -32,11 +32,11 @@
 
 <body class="d-flex flex-column h-100 main-bg" id="top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white opacity">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-color">
         <div class="container-fluid">
-            <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt=""
+            <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="A chefs hat over a recipe book with fire in the background"
                     class="logo {% if request.path == home_url %} d-lg-none {% endif %}"><span
-                    class="{% if request.path == home_url %} d-lg-none {% endif %}">Recipe Manager</span></a>
+                    class="{% if request.path == home_url %} d-lg-none {% endif %}"><strong>Recipe Manager</strong></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,25 +45,25 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
+                            href="{% url 'home' %}"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == recipes_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'recipes' %}">Recipes</a>
+                            href="{% url 'recipes' %}"><strong>Recipes</strong></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
+                            href="{% url 'account_logout' %}"><strong>Logout</strong></a>
                     </li>
                     {% else %}
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
+                            href="{% url 'account_signup' %}"><strong>Register</strong></a>
                     </li>
                     <li class="nav-item ms-auto">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
+                            href="{% url 'account_login' %}"><strong>Login</strong></a>
                     </li>
                     {% endif %}
                 </ul>
@@ -89,9 +89,9 @@
     <main class="flex-shrink-0 main-bg">
         <p class="text-end mx-3 opacity">
             {% if user.is_authenticated %}
-            You are logged in as {{ user }}
+            <strong>You are logged in as {{ user }}</strong>
             {% else %}
-            You are not logged in
+            <strong>You are not logged in</strong>
             {% endif %}
         </p>
 
