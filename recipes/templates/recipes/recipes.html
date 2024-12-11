@@ -1,24 +1,65 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends "base.html" %}
 {% load static %}
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-4 text-center">
-      <img src="{% static 'images/nobody.jpg' %}" width="75%" />
-    </div>
-    <div class="col-8">
-      <!-- Title goes between these h2 tags -->
-      <h2>{{ recipes.title }}</h2>
-      <!-- Content goes directly underneath this -->
-      {{ recipes.content | safe }}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col text-right">
-      <!-- Updated on field goes in here -->
 
-      <p class="text-end"><em>Updated on: {{ recipes.updated_on }}</em></p>
+{% block content %}
+
+<div class="container-fluid card w-75">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 my-3">
+            <h1 class="text-center">MENU</h1>
+        </div>
     </div>
-  </div>
+
+    <!-- Menu for tablets and desktops -->
+    <div class="row">
+        <div class="col-12 d-sm-block d-none">
+            <ul class="list-group list-group-horizontal text-center menu">
+                {% for section in menu_sections %}
+                <li><a href="#{{ section.title|lower}}" class="list-group-item menu-item"
+                        data-target="{{ section.title|lower}}">{{ section.title|upper}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Menu for mobile devices -->
+    <div class="row">
+        <div class="col-12 d-block d-sm-none">
+            <div class="scrollmenu">
+                <ul class="list-group list-group-horizontal text-center" id="menuMobile">
+                    {% for section in menu_sections %}
+                    <li><a href="#{{ section.title|lower}}" class="list-group-item menu-item"
+                            data-target="{{ section.title|lower}}">{{ section.title|upper}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% for section in menu_sections %}
+
+    <!-- Menu content -->
+    <div class="menu-content mt-5 {% if forloop.first %}d-block{% else %}d-none{% endif %}"
+        id="{{ section.title|lower }}">
+        {% for item in menu_items %}
+        {% if item.section == section %}
+        <div class="row menu-item mb-4">
+            <div class=" col-3 mx-auto img-container pt-4">
+                {% if "placeholder" in item.image.url %}
+                <img src="{% static 'media/logo.webp' %}" alt="placeholder-image" class="img-fluid opacity">
+                {% else %}
+                <img class="img-fluid img-zoom" src=" {{ item.image.url }}" alt="{{ item.title }}">
+                {% endif %}
+            </div>
+            <div class="col-md-5 col-9">
+                <h4 class="text-center"> {{ item.title }}</h4>
+                <div class="description-text">{{ item.description | safe}}</div>
+                <div class="ingredients-text">Ingredients: {{ item.ingredients | safe}}</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
 </div>
-{% endblock content %}
+
+{% endblock %}
