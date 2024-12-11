@@ -16,6 +16,11 @@ body {
 .opacity {
     opacity: 0.55;
 }
+
+.opacity2 {
+    opacity: 0.75;
+}
+
 .alert {
     background-color: #d7bbbbab;
     color: black;
@@ -39,6 +44,18 @@ body {
     height: 7vh;
     width: 7vh;
     margin: 0 10px;
+}
+
+.footer-text {
+    color: white;
+}
+
+.git-logo {
+    color: white;
+}
+
+.git-logo:hover {
+    color: #a94c00;
 }
 
 .menu {
@@ -241,8 +258,8 @@ body {
 
 /* Background for content */
 .card {
-    background-color: rgba(0, 0, 0, 0.516);
-    border: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #a94c00;
     border-radius: 2%;
 }
 

@@ -32,7 +32,7 @@
 
 <body class="d-flex flex-column h-100 main-bg" id="top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-color">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-color opacity2">
         <div class="container-fluid">
             <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="A chefs hat over a recipe book with fire in the background"
                     class="logo {% if request.path == home_url %} d-lg-none {% endif %}"><span
@@ -103,9 +103,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg opacity">
+    <footer class="footer mt-auto py-3 footer-text">
         <ul class="list-group">
-            <li class="m-0 text-center text-white">
+            <li class="m-0 text-center">
                 &copy; Copyright 2024 Recipe Manager.
             </li>
         </ul>
@@ -113,7 +113,7 @@
             <li>Follow us at :</li>
             <li>
                 <a href="https://github.com/liam-2112/recipe-site" target="_blank" rel="noopener"
-                    aria-label="Visit our GitHub page (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
+                    aria-label="Visit our GitHub page (opens in a new tab)"><i class="fa-brands fa-github git-logo"></i></a>
             </li>
         </ul>
     </footer>
