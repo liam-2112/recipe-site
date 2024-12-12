@@ -27,7 +27,7 @@ def review_view(request):
             review.save()
             messages.add_message(request,
                                  messages.SUCCESS,
-                                 'Review is submitted and awaiting approval')
+                                 'Suggestion is submitted and awaiting approval')
             return redirect(reverse('reviews')+'#top')
 
     context = {
@@ -45,7 +45,7 @@ def review_edit(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
 
     if review.author != request.user:
-        messages.error(request, "You don't have permission to edit this review.")
+        messages.error(request, "You don't have permission to edit this suggestion.")
         return redirect('reviews')
 
     if request.method == "POST":
@@ -54,7 +54,7 @@ def review_edit(request, review_id):
             updated_review = review_form.save(commit=False)
             updated_review.approved = False
             updated_review.save()
-            messages.success(request, 'Review updated and awaiting approval!')
+            messages.success(request, 'Suggestion updated and awaiting approval!')
             return redirect('reviews')
     else:
         review_form = ReviewForm(instance=review)
@@ -76,10 +76,10 @@ def review_delete(request, review_id):
     if review.author == request.user:
         review.delete()
         messages.add_message(request,
-                             messages.SUCCESS, 'Review deleted successfully.')
+                             messages.SUCCESS, 'Suggestion deleted successfully.')
     else:
         messages.add_message(
             request,
-            messages.ERROR, 'Invalid request method for deleting review.')
+            messages.ERROR, 'Invalid request method for deleting suggestion.')
 
     return HttpResponseRedirect(reverse('reviews'))

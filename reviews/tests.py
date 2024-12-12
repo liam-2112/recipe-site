@@ -18,5 +18,5 @@ class TestReviewView(TestCase):
         post_data = {'title': 'Test', 'score': 4, 'body':'testing'}
         response = self.client.post(reverse('reviews'), data=post_data, follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Review is submitted and awaiting approval',
+        self.assertIn('Suggestion is submitted and awaiting approval',
         response.content.decode())

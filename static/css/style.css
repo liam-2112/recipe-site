@@ -165,32 +165,6 @@ body {
 }
 
 /* Styling buttons */
-.edit_btn {
-    background-color: #00000082;
-    border-color: #047e45;
-    color: #047e45;
-    padding: 0 10px;
-}
-
-.delete_btn {
-    background-color: #00000082;
-    border-color: #9f0202;
-    color: #9f0202;
-    padding: 0 10px;
-}
-
-.update-btn {
-    background-color: #00000082;
-    border-color: #3c00bef5;
-    color: #3c00bef5;
-}
-
-.update-btn:hover {
-    border-color: #093f10f5;
-    background-color: #0f4105e8;
-
-}
-
 .btn-primary:active {
     background-color: #103b27;
     border-color: #242b34;
@@ -207,6 +181,49 @@ body {
     border-color: #a94c00;
     color: black;
 }
+
+.edit_btn {
+    background-color: #00000082;
+    border-color: #047e45;
+    color: #047e45;
+    padding: 0 10px;
+}
+
+.edit_btn:hover {
+    background-color: #047e45;
+    border-color: #047e45;
+    color: #000000;
+    padding: 0 10px;
+}
+
+.delete_btn {
+    background-color: #00000082;
+    border-color: #9f0202;
+    color: #9f0202;
+    padding: 0 10px;
+}
+
+.delete_btn:hover {
+    background-color: #9f0202;
+    border-color: #9f0202;
+    color: #000000;
+    padding: 0 10px;
+}
+
+.update-btn {
+    background-color: #00000082;
+    border-color: #3c00bef5;
+    color: #3c00bef5;
+    padding: 0 10px;
+}
+
+.update-btn:hover {
+    background-color: #3c00bef5;
+    border-color: #3c00bef5;
+    color: #000000f5;
+    padding: 0 10px;
+}
+
 
 
 .faded {

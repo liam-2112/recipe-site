@@ -5,11 +5,11 @@
 
 <div class="container mx-auto py-0">
   {% if user.is_authenticated %}
-  <p><a href="#write-review" class="m-3 link">Leave a review <i class="fa-regular fa-comments"></i></a></p>
+  <p><a href="#write-review" class="m-3 link">Leave a Suggestion <i class="fa-regular fa-comments"></i></a></p>
   {% else %}
-  <p><a href="{{ login_url }}" class="m-3 link">Log in</a>to leave a review</p>
+  <p><a href="{{ login_url }}" class="m-3 link">Log in</a>to leave a suggestion</p>
   {% endif %}
-  <h1 class="text-center mb-4">Reviews</h1>
+  <h1 class="text-center mb-4">Suggestions</h1>
   <!-- Reviews view -->
   <div class="row m-0" >
     {% for review in reviews %}
@@ -52,14 +52,14 @@
           </p>
           {% if not review.approved and review.author == user %}
           <p class="approval text-warning">
-            This review is awaiting approval
+            This suggestion is awaiting approval
           </p>
           {% endif %}
        <!-- Condition for checking if the authenticated user == review author -->
         {% if user.is_authenticated and review.author == user %}
         <div class="card-footer bg-transparent">
-          <a href="{% url 'review_edit' review.id %}" class="edit_btn btn btn-success btn-sm">Edit</a>
-            <button class="delete_btn btn btn-delete btn-sm" review_id ="{{ review.id }}">Delete</button>         
+          <a href="{% url 'review_edit' review.id %}" class="btn btn-success btn-sm">Edit</a>
+            <button class="btn-danger btn btn-delete btn-sm" review_id ="{{ review.id }}">Delete</button>         
         </div>
         
         {% endif %}
@@ -71,6 +71,19 @@
   </div>
 </div>
 
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
 <!-- Creating New Review -->
 {% if user.is_authenticated %}
 <div class="container mt-5">
@@ -78,18 +91,12 @@
     <div class="col-md-8 col-lg-6 mx-auto">
       <div class="card m-0">
         <div class="card-body" id="write-review">
-          <h3 class="card-title">Leave a review:</h3>
+          <h3 class="card-title">Leave a suggestion:</h3>
           <p class="opacity">Posting as: {{ user.username }}</p>
           <form id="reviewForm" method="post">
             {% csrf_token %}
             <div class="form-group">
-              <h4>Rating:</h4>
-              <div class="star-rating">
-                {% for radio in review_form.score %}
-                  {{ radio.tag }}
-                  <label for="{{ radio.id_for_label }}"></label>
-                {% endfor %}
-              </div>
+              <h4>suggestion:</h4>
             </div>
             {{ review_form.title|as_crispy_field }}
             {{ review_form.body|as_crispy_field }}
@@ -110,12 +117,12 @@ aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title"
-        id="deleteModalLabel">Delete review?</h5>
+        id="deleteModalLabel">Delete suggestion?</h5>
       <button type="button" class="btn-close"
         data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-      Are you sure you want to delete your review?
+      Are you sure you want to delete your suggestion?
       This action cannot be undone.
     </div>
     <div class="modal-footer">
