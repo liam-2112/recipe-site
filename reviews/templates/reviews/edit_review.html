@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.is_authenticated and review.author == user%}
+<div class="container col-md-4 col-12 offset-md-4 mt-3">
+    <h2>Edit Review</h2>
+    <form method="post">
+        <h4>Rating:</h4>
+        <div class="star-rating">
+          {% for radio in review_form.score %}
+            {{ radio.tag }}
+            <label for="{{ radio.id_for_label }}"></label>
+          {% endfor %}
+        </div>
+        {% csrf_token %}
+        {{ review_form.title|as_crispy_field }}
+        {{ review_form.body|as_crispy_field }}
+        <button type="submit" class="btn btn-primary update-btn">Update Review</button>
+        <a href="{% url 'reviews' %}" class="btn btn-secondary w-25">Cancel</a>      
+
+    </form>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container mx-auto py-0">
+  {% if user.is_authenticated %}
+  <p><a href="#write-review" class="m-3 link">Leave a review <i class="fa-regular fa-comments"></i></a></p>
+  {% else %}
+  <p><a href="{{ login_url }}" class="m-3 link">Log in</a>to leave a review</p>
+  {% endif %}
+  <h1 class="text-center mb-4">Reviews</h1>
+  <!-- Reviews view -->
+  <div class="row m-0" >
+    {% for review in reviews %}
+    {% if review.approved or review.author == user %}
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card m-0 h-100 {% if not review.approved and review.author == user %}faded{% endif %}">
+        <div class="card-body">
+          <!-- Take idea for star ratings from this project - https://github.com/doctypeKieran/ci-capstone-project -->
+          <div class="mb-2">
+            {% if review.score == 1 %}
+            <i class="fa-solid fa-star"></i>
+            {% elif review.score == 2 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            {% elif review.score == 3 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            {% elif review.score == 4 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            {% elif review.score == 5 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            {% endif %}
+          </div>
+          <h3 class="card-title">{{ review.title }}</h3>
+          <div id="review{{ review.id }}" class="card-text">
+            {{ review.body | linebreaks }}
+          </div>
+          <p class="card-text">
+            <small class="text-muted">
+              Written by: {{ review.author }} on {{ review.created_on }}
+            </small>
+          </p>
+          {% if not review.approved and review.author == user %}
+          <p class="approval text-warning">
+            This review is awaiting approval
+          </p>
+          {% endif %}
+       <!-- Condition for checking if the authenticated user == review author -->
+        {% if user.is_authenticated and review.author == user %}
+        <div class="card-footer bg-transparent">
+          <a href="{% url 'review_edit' review.id %}" class="edit_btn btn btn-success btn-sm">Edit</a>
+            <button class="delete_btn btn btn-delete btn-sm" review_id ="{{ review.id }}">Delete</button>         
+        </div>
+        
+        {% endif %}
+      </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Creating New Review -->
+{% if user.is_authenticated %}
+<div class="container mt-5">
+  <div class="row m-0">
+    <div class="col-md-8 col-lg-6 mx-auto">
+      <div class="card m-0">
+        <div class="card-body" id="write-review">
+          <h3 class="card-title">Leave a review:</h3>
+          <p class="opacity">Posting as: {{ user.username }}</p>
+          <form id="reviewForm" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <h4>Rating:</h4>
+              <div class="star-rating">
+                {% for radio in review_form.score %}
+                  {{ radio.tag }}
+                  <label for="{{ radio.id_for_label }}"></label>
+                {% endfor %}
+              </div>
+            </div>
+            {{ review_form.title|as_crispy_field }}
+            {{ review_form.body|as_crispy_field }}
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title"
+        id="deleteModalLabel">Delete review?</h5>
+      <button type="button" class="btn-close"
+        data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      Are you sure you want to delete your review?
+      This action cannot be undone.
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary"
+        data-bs-dismiss="modal">Close</button>
+      <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
