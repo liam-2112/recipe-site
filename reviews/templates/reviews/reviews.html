@@ -11,7 +11,7 @@
   {% endif %}
   <h1 class="text-center mb-4">Suggestions</h1>
   <!-- Reviews view -->
-  <div class="row m-0" >
+  <div class="row m-0">
     {% for review in reviews %}
     {% if review.approved or review.author == user %}
     <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -42,7 +42,7 @@
             {% endif %}
           </div>
           <h3 class="card-title">{{ review.title }}</h3>
-          <div id="review{{ review.id }}" class="card-text">
+          <div id="review{{review.id}}" class="card-text">
             {{ review.body | linebreaks }}
           </div>
           <p class="card-text">
@@ -55,15 +55,15 @@
             This suggestion is awaiting approval
           </p>
           {% endif %}
-       <!-- Condition for checking if the authenticated user == review author -->
-        {% if user.is_authenticated and review.author == user %}
-        <div class="card-footer bg-transparent">
-          <a href="{% url 'review_edit' review.id %}" class="btn btn-success btn-sm">Edit</a>
-            <button class="btn-danger btn btn-delete btn-sm" review_id ="{{ review.id }}">Delete</button>         
+          <!-- Condition for checking if the authenticated user == review author -->
+          {% if user.is_authenticated and review.author == user %}
+          <div class="card-footer bg-transparent">
+            <a href="{% url 'review_edit' review.id %}" class="btn btn-success btn-sm">Edit</a>
+            <button class="btn-danger btn btn-delete btn-sm" review_id="{{ review.id }}">Delete</button>
+          </div>
+
+          {% endif %}
         </div>
-        
-        {% endif %}
-      </div>
       </div>
     </div>
     {% endif %}
@@ -73,14 +73,14 @@
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
-    </ul>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    {% endif %}
+  </ul>
 </nav>
 {% endif %}
 
@@ -100,7 +100,7 @@
             </div>
             {{ review_form.title|as_crispy_field }}
             {{ review_form.body|as_crispy_field }}
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>          
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
           </form>
         </div>
       </div>
@@ -111,26 +111,22 @@
 
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-aria-labelledby="deleteModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title"
-        id="deleteModalLabel">Delete suggestion?</h5>
-      <button type="button" class="btn-close"
-        data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      Are you sure you want to delete your suggestion?
-      This action cannot be undone.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary"
-        data-bs-dismiss="modal">Close</button>
-      <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete suggestion?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your suggestion?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 {% endblock %}

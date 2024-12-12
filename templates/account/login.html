@@ -13,8 +13,10 @@
         <div class="col-md-8 mt-3 offset-md-2 text-center">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p> {% blocktrans %}Welcome to <strong>Recipe Manager</strong>. To leave suggestions for the site, please log in. <br>
-                <em>If you have not created an account yet, then </em><a class="link" href="{{ signup_url }}"><strong>Register</strong></a> <em>first</em>.
+            <p> {% blocktrans %}Welcome to <strong>Recipe Manager</strong>. To leave suggestions for the site, please
+                log in. <br>
+                <em>If you have not created an account yet, then </em><a class="link"
+                    href="{{ signup_url }}"><strong>Register</strong></a> <em>first</em>.
                 {% endblocktrans %}</p>
         </div>
     </div>
@@ -24,7 +26,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                 {% endif %}
                 <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
             </form>

@@ -5,54 +5,58 @@
 
 {% block content %}
 
-    <!--Main content-->
-    <div class="row">
-        <div class="col-12">
-            <div class="container-fluid text-center px-2 card w-75">
-                <div id="intro" class="mt-3 opacity">
-                    <h2>
-                        <strong>Welcome to Recipe Manager</strong>
-                        <br>
-                        <br>
-                    </h2>    
+<!--Main content-->
+<div class="row">
+    <div class="col-12">
+        <div class="container-fluid text-center px-2 card w-75">
+            <div class="mt-3 opacity">
+                <h2>
+                    <strong>Welcome to Recipe Manager</strong>
+                    <br>
+                    <br>
+                </h2>
+            </div>
+
+            <!-- Images of food prep -->
+            <div class="row mb-3 mx-auto">
+                <div class="col-6">
+                    <img src="{% static 'images/homepic1.jpg' %}" alt="chef using a laddle to pour sauce over food "
+                        class="img-fluid img-same">
                 </div>
-
-                <!-- Images of food prep -->
-                <div class="row mb-3 mx-auto">
-                    <div class="col-6">
-                        <img src="{% static 'images/homepic1.jpg' %}" alt="chef using a laddle to pour sauce over food " class="img-fluid img-same">
-                    </div>
-                    <div class="col-6">
-                        <img src="{% static 'images/homepic2.png' %}" alt="an open recipe book on a table with ingredients layed around" class="img-fluid img-same">
-                    </div>
+                <div class="col-6">
+                    <img src="{% static 'images/homepic2.png' %}"
+                        alt="an open recipe book on a table with ingredients layed around" class="img-fluid img-same">
                 </div>
+            </div>
 
-                <div id="intro" class="mt-3">
-                    <p>
-                        <br>
-                        <br>
-                        Welcome to our recipe management site, the ultimate platform for food lovers to explore, share, and organize <br>
-                        their favorite recipes. Whether you're searching for inspiration or looking to save your culinary discoveries, <br>
-                        our site makes it easy to find and store recipes you love. Once logged in, users can save their favorite <br>
-                        recipes to their personalized user page for quick access anytime. Additionally, our platform allows users to <br>
-                        contribute their own unique recipes to the main recipe page, sharing their creations with the entire community. <br>
-                        It's the perfect place to discover new flavors, organize your kitchen adventures, and share your passion for cooking with others.
-                        <br>
-                        <br>
-                    </p>    
-                </div>
+            <div id="intro" class="mt-3">
+                <p>
+                    <br>
+                    <br>
+                    Welcome to our recipe management site, the ultimate platform for food lovers to explore, share, and
+                    organize <br>
+                    their favorite recipes. Whether you're searching for inspiration or looking to save your culinary
+                    discoveries, <br>
+                    our site makes it easy to find and store recipes you love. Once logged in, users can save their
+                    favorite <br>
+                    recipes to their personalized user page for quick access anytime. Additionally, our platform allows
+                    users to <br>
+                    contribute their own unique recipes to the main recipe page, sharing their creations with the entire
+                    community. <br>
+                    It's the perfect place to discover new flavors, organize your kitchen adventures, and share your
+                    passion for cooking with others.
+                    <br>
+                    <br>
+                </p>
+            </div>
 
-                <!-- Get in touch -->
-                        <div class="mb-3">
-                            <h5 class="text-center">Contact Us:</h5>
-                            <span>Email: </span>
-                            <a href="mailto:liam_2112@hotmail.co.uk" class="link fs-6">liam_2112@hotmail.co.uk</a>
-                        </div>
-
+            <!-- Get in touch -->
+            <div class="mb-3">
+                <h5 class="text-center">Contact Us:</h5>
+                <span>Email: </span>
+                <a href="mailto:liam_2112@hotmail.co.uk" class="link fs-6">liam_2112@hotmail.co.uk</a>
             </div>
         </div>
     </div>
 </div>
-
-
 {% endblock %}
