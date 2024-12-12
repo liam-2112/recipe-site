@@ -62,8 +62,17 @@ Github repository, click <a href="https://github.com/liam-2112/recipe-site" targ
     - [Additional reading/tutorials/books/blogs](#additional-readingtutorialsbooksblogs)
 19. [Acknowledgements](#acknowledgements)
 
+# Credits
+I give credit to https://github.com/Anka-S/hata-na-tata. I was inspired by their work and the layout was very similar to what i wanted to use myself.
+I have used their code as a template and changed bits to meet what i need. Some bits of code are still the same, But with future updates i plan to change the code to
+fit better with my new pages and features.
+
+I give credit to Code Institute for helping me through this journey and for giving me code i have used from the LMS Django walkthrough. Thank you to all the facilitators for being there to help too.
+
+I must also credit Mars Oakley and Guy from my WECA Boootcamp program for helping me to understand some issues such as merging.
+
+
 # Acknoweledgement
 Ran out of time to do/finish the README.MD
 future updates to come to the website and the readme
-Credits to hata na tata for insiration, Code institute code star blog and the Healus project.
-Further details on crediting to be implemented
+
