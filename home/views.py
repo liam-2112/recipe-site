@@ -8,4 +8,3 @@ class HomePage(TemplateView):
     Displays home page
     """
     template_name = 'home/index.html'
-
