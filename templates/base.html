@@ -33,7 +33,7 @@
 
 <body class="d-flex flex-column h-100 main-bg" id="top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-color opacity2">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-color opacity2">
         <div class="container-fluid">
             <a class="navbar-brand d-inline" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}" alt="A chefs hat over a recipe book with fire in the background"
                     class="logo {% if request.path == home_url %} d-lg-none {% endif %}"><span
@@ -92,7 +92,7 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        <p class="text-end mx-3 opacity">
+        <p class="text-end mx-3">
             {% if user.is_authenticated %}
             <strong>You are logged in as {{ user }}</strong>
             {% else %}
