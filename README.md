@@ -65,3 +65,5 @@ Github repository, click <a href="https://github.com/liam-2112/recipe-site" targ
 # Acknoweledgement
 Ran out of time to do/finish the README.MD
 future updates to come to the website and the readme
+Credits to hata na tata for insiration, Code institute code star blog and the Healus project.
+Further details on crediting to be implemented
