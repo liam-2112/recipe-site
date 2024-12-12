@@ -21,7 +21,6 @@ class MenuItem(models.Model):
                             null=True, blank=True)
     ingredients = models.TextField(max_length=5000)
     description = models.TextField(max_length=5000)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
