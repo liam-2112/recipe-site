@@ -4,6 +4,7 @@ from .models import MenuItem
 from .forms import RecipeForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
+from django.contrib import messages
 
 # Recipe List View with Pagination
 def recipe_list(request):
@@ -27,7 +28,8 @@ def add_recipe(request):
             recipe = form.save(commit=False)
             recipe.owner = request.user  # Assigning ownership
             recipe.save()
-            return redirect('recipe_list', id=recipe.id)
+            messages.success(request, 'Recipe added successfully! 🎉')
+            return redirect('recipe_list')
     else:
         form = RecipeForm()
     return render(request, 'recipes/add_recipe.html', {'form': form})
@@ -43,7 +45,8 @@ def edit_recipe(request, id):
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
         if form.is_valid():
             form.save()
-            return redirect('recipe_detail', id=recipe.id)
+            messages.success(request, 'Recipe updated successfully! 🎉')  # Success message
+            return redirect('recipe_detail', item_id=recipe.id)
     else:
         form = RecipeForm(instance=recipe)
     
@@ -59,6 +62,7 @@ def delete_recipe(request, id):
     
     if request.method == 'POST':
         recipe.delete()
+        messages.warning(request, 'Recipe deleted successfully! ⚠️')
         return redirect('recipes')  # Redirect to the recipe list view
     
     return render(request, 'recipes/confirm_delete.html', {'recipe': recipe})
