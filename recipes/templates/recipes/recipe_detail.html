@@ -2,23 +2,36 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center">{{ item.title }}</h1>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <img src="{{ item.image.url }}" alt="{{ item.title }}" class="img-fluid rounded">
+<div class="container w-75">
+    <div class="row my-4">
+        <div class="col-md-12">
+            <h1 class="text-center">{{ recipe.title }}</h1>
         </div>
     </div>
-    <div class="mt-4">
-        <h3>Description</h3>
-        <p>{{ item.description|safe }}</p>
 
-        <h4>Ingredients</h4>
-        <p>{{ item.ingredients|safe }}</p>
+    <div class="row">
+        <div class="col-md-6">
+            {% if "placeholder" in recipe.image.url %}
+            <img src="{% static 'images/default.webp' %}" alt="placeholder-image" class="img-fluid">
+            {% else %}
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="img-fluid">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h4>Description</h4>
+            <p>{{ recipe.description|safe }}</p>
 
-        <h4>Instructions</h4>
-        <p>{{ item.instructions|safe }}</p>
+            <h4>Ingredients</h4>
+            <p>{{ recipe.ingredients|safe }}</p>
+
+            <h4>Instructions</h4>
+            <p>{{ recipe.instructions|safe }}</p>
+        </div>
     </div>
-    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to Recipes</a>
+
+    <div class="text-end mt-4">
+        <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit Recipe</a>
+        <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger">Delete Recipe</a>
+    </div>
 </div>
 {% endblock %}
