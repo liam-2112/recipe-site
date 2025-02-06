@@ -34,7 +34,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-liam2112-recipesite-skabzp623x5.ws.codeinstitute-ide.net',
-    'recipe-manager-site-9b7bfd4b2c5e.herokuapp.com'
+    'recipe-manager-site-9b7bfd4b2c5e.herokuapp.com',
+    'localhost'
     ]
 
 CSRF_TRUSTED_ORIGINS = [
