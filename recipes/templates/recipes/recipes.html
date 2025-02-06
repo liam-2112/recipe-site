@@ -3,69 +3,71 @@
 
 {% block content %}
 
-<div class="container-fluid card w-75">
+<div class="container-fluid w-75">
     <div class="row">
         <div class="col-md-4 offset-md-4 my-3">
             <h1 class="text-center">Recipes</h1>
         </div>
     </div>
 
-    <!-- Menu for tablets and desktops -->
-    <div class="row">
-        <div class="col-12 d-sm-block d-none">
-            <ul class="list-group list-group-horizontal-md text-center menu">
-                {% for section in menu_sections %}
-                <li><a href="#{{ section.title|lower}}" class="list-group-item menu-item"
-                        data-target="{{ section.title|lower}}">{{ section.title|upper}}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+    <!-- Add Recipe Button for Logged-in Users -->
+    {% if user.is_authenticated %}
+    <div class="text-end mb-3">
+        <a href="{% url 'add_recipe' %}" class="btn btn-primary">Add New Recipe</a>
     </div>
+    {% endif %}
 
-    <!-- Menu for mobile devices -->
+    <!-- Recipe Cards with Pagination -->
     <div class="row">
-        <div class="col-12 d-block d-sm-none">
-            <div class="scrollmenu">
-                <ul class="list-group list-group-horizontal-md text-center" id="menuMobile">
-                    {% for section in menu_sections %}
-                    <li><a href="#{{ section.title|lower}}" class="list-group-item menu-item"
-                            data-target="{{ section.title|lower}}">{{ section.title|upper}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-    {% for section in menu_sections %}
-
-    <!-- Menu content -->
-    <div class="menu-content mt-5 {% if forloop.first %}d-block{% else %}d-none{% endif %}" id="{{ section.title|lower }}">
-        {% for item in menu_items %}
-        {% if item.section == section %}
-        <div class="row menu-item mb-4">
-            <!-- Make Image Clickable -->
-            <div class="col-3 mx-auto img-container pt-4">
-                <a href="{% url 'recipe_detail' item.id %}">
-                    {% if "placeholder" in item.image.url %}
-                    <img src="{% static 'images/default.webp' %}" alt="placeholder-image" class="img-fluid opacity">
-                    {% else %}
-                    <img class="img-fluid img-zoom" src="{{ item.image.url }}" alt="{{ item.title }}">
-                    {% endif %}
-                </a>
-            </div>
-    
-            <!-- Make Title and Description Clickable -->
-            <div class="col-md-5 col-9">
+        {% for item in page_obj %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
                 <a href="{% url 'recipe_detail' item.id %}" class="text-decoration-none text-dark">
-                    <h4 class="text-center">{{ item.title }}</h4>
-                    <div class="description-text">{{ item.description | safe }}</div>
-                    <div class="ingredients-text">Ingredients: {{ item.ingredients | safe }}</div>
+                    {% if "placeholder" in item.image.url %}
+                    <img src="{% static 'images/default.webp' %}" alt="placeholder-image" class="card-img-top">
+                    {% else %}
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-img-top">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ item.title }}</h5>
+                        <p class="card-text description-text">{{ item.description|safe }}</p>
+                        <p class="card-text ingredients-text">Ingredients: {{ item.ingredients|safe }}</p>
+                    </div>
                 </a>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
     </div>
-    {% endfor %}
+
+    <!-- Pagination Controls -->
+    <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
 </div>
 
 {% endblock %}
