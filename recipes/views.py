@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import MenuItem
 from .forms import RecipeForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 
 # Recipe List View with Pagination
 def recipe_list(request):
@@ -23,14 +24,20 @@ def add_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('recipe_list')
+            recipe = form.save(commit=False)
+            recipe.owner = request.user  # Assigning ownership
+            recipe.save()
+            return redirect('recipe_list', id=recipe.id)
     else:
         form = RecipeForm()
     return render(request, 'recipes/add_recipe.html', {'form': form})
 
+# Edit existing recipe (Authenticated Users Only)
 def edit_recipe(request, id):
-    recipe = get_object_or_404(recipe, id=id)
+    recipe = get_object_or_404(MenuItem, id=id)
+
+    if recipe.owner != request.user:
+        return HttpResponseForbidden("You are not allowed to edit this recipe.")
     
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -42,8 +49,13 @@ def edit_recipe(request, id):
     
     return render(request, 'recipes/edit_recipe.html', {'form': form, 'recipe': recipe})
 
+
+# delete existing recipe (Authenticated Users Only)
 def delete_recipe(request, id):
-    recipe = get_object_or_404(recipe, id=id)
+    recipe = get_object_or_404(MenuItem, id=id)
+
+    if recipe.owner != request.user:
+        return HttpResponseForbidden("You are not allowed to delete this recipe.")
     
     if request.method == 'POST':
         recipe.delete()

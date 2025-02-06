@@ -28,10 +28,11 @@
             <p>{{ recipe.instructions|safe }}</p>
         </div>
     </div>
-
+    {% if user == recipe.owner %}
     <div class="text-end mt-4">
         <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit Recipe</a>
         <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger">Delete Recipe</a>
     </div>
+{% endif %}
 </div>
 {% endblock %}
