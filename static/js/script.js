@@ -1,43 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Menu and image zoom functionality
-    const menuItems = document.querySelectorAll('.menu-item');
-    const menuContents = document.querySelectorAll('.menu-content');
-    const zoomableImages = document.querySelectorAll('.img-zoom');
+    // // Menu and image zoom functionality
+    // const menuItems = document.querySelectorAll('.menu-item');
+    // const menuContents = document.querySelectorAll('.menu-content');
+    // const zoomableImages = document.querySelectorAll('.img-zoom');
 
-    if (menuItems.length && menuContents.length) {
-        menuItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = this.getAttribute('data-target');
+    // if (menuItems.length && menuContents.length) {
+    //     menuItems.forEach(item => {
+    //         item.addEventListener('click', function(e) {
+    //             e.preventDefault();
+    //             const target = this.getAttribute('data-target');
 
-                menuContents.forEach(content => {
-                    content.classList.add('d-none');
-                });
+    //             menuContents.forEach(content => {
+    //                 content.classList.add('d-none');
+    //             });
 
-                const targetElement = document.getElementById(target);
-                if (targetElement) {
-                    targetElement.classList.remove('d-none');
-                }
+    //             const targetElement = document.getElementById(target);
+    //             if (targetElement) {
+    //                 targetElement.classList.remove('d-none');
+    //             }
 
-                menuItems.forEach(menuItem => {
-                    menuItem.classList.remove('active');
-                });
+    //             menuItems.forEach(menuItem => {
+    //                 menuItem.classList.remove('active');
+    //             });
 
-                this.classList.add('active');
-            });
-        });
-    }
+    //             this.classList.add('active');
+    //         });
+    //     });
+    // }
 
-    if (zoomableImages.length) {
-        zoomableImages.forEach(image => {
-            image.addEventListener('click', function(e) {
-                e.stopPropagation();
-                this.classList.toggle('zoomed');
+    // if (zoomableImages.length) {
+    //     zoomableImages.forEach(image => {
+    //         image.addEventListener('click', function(e) {
+    //             e.stopPropagation();
+    //             this.classList.toggle('zoomed');
                 
-                document.body.style.overflow = this.classList.contains('zoomed') ? 'hidden' : '';
-            });
-        });
-    }
+    //             document.body.style.overflow = this.classList.contains('zoomed') ? 'hidden' : '';
+    //         });
+    //     });
+    // }
 
 
      // Star rating functionality
