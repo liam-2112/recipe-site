@@ -20,6 +20,7 @@ class MenuItem(models.Model):
     image = CloudinaryField('image', default='placeholder',
                             null=True, blank=True)
     ingredients = models.TextField(max_length=5000)
+    instructions = models.TextField(blank=True, null=True)
     description = models.TextField(max_length=5000)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

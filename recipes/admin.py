@@ -14,6 +14,6 @@ class MenuSectionAdmin(SummernoteModelAdmin):
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
 
-    list_display = ('title', 'ingredients', 'section', 'created_on')
+    list_display = ('title', 'ingredients', 'instructions', 'section', 'created_on')
     search_fields = ['title', 'ingredients']
     list_filter = ['section', 'created_on']

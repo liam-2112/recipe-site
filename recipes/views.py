@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from .models import MenuSection, MenuItem
 
@@ -22,3 +22,7 @@ def menu_view(request):
     }
     
     return render(request, 'recipes/recipes.html', context)
+
+def recipe_detail(request, item_id):
+    item = get_object_or_404(MenuItem, id=item_id)
+    return render(request, 'recipe_detail.html', {'item': item})
