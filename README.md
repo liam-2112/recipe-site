@@ -1,11 +1,9 @@
-# <img src="/static/images/logo.webp" alt="logo" width="20em" /> **Recipe Manager**
+# <img src="/static/images/logo.webp" alt="logo" width="80em" /> **Recipe Manager**
 
 ### A recipe management and discovery website
 Recipe Manager is an innovative online platform that combines the functionality of a social media site with the practicality of a recipe-sharing hub. Designed for food enthusiasts of all kinds, from home cooks to professional chefs, Recipe Manager strives to bring people together by fostering a shared passion for cooking, eating, and culinary discovery.
 
 Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" target="_blank">Recipe Manager</a>
-
-Github repository, click <a href="https://github.com/liam-2112/recipe-site" target="_blank">here</a>.
 
 ![Responsive Devices View]()
 
@@ -59,8 +57,6 @@ Github repository, click <a href="https://github.com/liam-2112/recipe-site" targ
 13. [Acknowledgements](#acknowledgements)
 14. [Updates](#updates)
 
-
-XXXXXXXXXX
 
 ## UX - User Experience
 
