@@ -187,7 +187,8 @@ Balsamiq Wireframes was used to create a base idea for the website. The idea's t
 ### ER Diagram
 As part of the planning I have made an ER diagram to show how the database would be connected for the project. I have done this on paper but plan to transfer this into a diagram planner in a future update to allow the diagram to be clearer.
 
-![ER diagram]()
+#### ER Diagram
+![ER diagram](docs/wireframes/ER-diagram.jpg)
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -195,53 +196,106 @@ As part of the planning I have made an ER diagram to show how the database would
 ## Features
 
 ### Home Page
+#### Home
 ![Home](docs/project-images/project-home.png)
+
+#### Mobile Home
 ![Mobile Home](docs/project-images/mob-home.png)
 
 ### Recipes Page
+#### Recipes
 ![Recipes](docs/project-images/recipes.png)
+
+#### Mobile Recipes
 ![Mobile Recipes](docs/project-images/mob-recipe.png)
+
+#### Recipes detail
 ![Recipes detail](docs/project-images/recipe-detail-logout.png)
 
 ### Suggestions Page
+#### Suggestions
 ![Suggestions](docs/project-images/suggestions.png)
+
+#### Suggestions Logged In
 ![Suggestions Logged In](docs/project-images/suggestions-sign.png)
+
+#### Mobile Suggestions
 ![Mobile Suggestions](docs/project-images/mob-sug-sign.png)
+
+#### Mobile Suggestions Logged In
 ![Mobile Suggestions Logged In](docs/project-images/mob-sug-sign-2.png)
 
 ### Registration Page
+#### Sign Up
 ![Sign Up](docs/project-images/signup.png)
+
+#### Mobile Sign Up
 ![Mobile Sign Up](docs/project-images/mob-signup.png)
 
 ### Log In Page
+#### Log In
 ![Log In](docs/project-images/signin.png)
+
+#### Mobile Log In
 ![Mobile Log In](docs/project-images/mob-signin.png)
 
 ### Log Out Page
+#### Log Out
 ![Log Out](docs/project-images/signout.png)
+
+#### Mobile Log Out
 ![Mobile Log Out](docs/project-images/mob-signout.png)
 
 ### Nav Bar And Footer
+#### Navigation Bar
 ![Navigation Bar](docs/project-images/nav.png)
+
+#### Footer
 ![Footer](docs/project-images/footer.png)
+
+#### Mobile Navigation Bar
 ![Mobile Navigation Bar](docs/project-images/mobnav.png)
 
 
 ### Confirmation Messages
+#### Log In Confirm
 ![Log In Confirm](docs/project-images/confirm.png)
+
+#### Delete Suggestion Confirm
 ![Delete Suggestion Confirm](docs/project-images/delete-confirm.png)
+
+#### Delete Recipe Confirm
 ![Delete Recipe Confirm](docs/project-images/delete-recipe-confirm.png)
+
+#### Sign Out Confirmation
 ![Sign Out Confirmation](docs/project-images/signout-confirm.png)
+
+#### Suggestion Submission
 ![Suggestion Submission](docs/project-images/sug-sub-aprove-wait.png)
+
+#### Suggestion Update
 ![Suggestion Update](docs/project-images/sug-update-aprove-wait.png)
+
+#### Required Fields
 ![Required Fields](docs/project-images/required-fields.png)
 
 ### CRUD functionality
+#### Edit And Delete Suggestions
 ![Edit And Delete Suggestions](docs/project-images/edit-delete.png)
+
+#### Update Suggestion
 ![Update Suggestion](docs/project-images/sug-update.png)
+
+#### Add New Recipe
 ![Add New Recipe](docs/project-images/new-recipe.png)
+
+#### Edit Recipe Top
 ![Edit Recipe Top](docs/project-images/edit-rec.png)
+
+#### Edit Recipe Bottom
 ![Edit Recipe Bottom](docs/project-images/edit-rec-2.png)
+
+#### Recipe Edit And Delete
 ![Recipe Edit And Delete](docs/project-images/recipe-detail.png)
 
 
@@ -285,50 +339,77 @@ In a future update there will be comments implemented to each users recipes. I w
 
 ### Accessibility Testing
 
-lighthouse
+https://lighthouse-metrics.com/
+For the accessibility testing i used a global lighthouse website. The scores had very slight improvments to be made but the majority of the web page came back with great results.
+
+#### Lighthouse Test 1
+![Lighthouse test 1](docs/Testing/lighthouse1.png)
+
+#### Lighthouse Test 2
+![Lighthouse test 2](docs/Testing/lighthouse2.png)
 
 ### HTML Validation
+https://validator.w3.org/#validate_by_input
+For the HTML validator the only errors that got picked out are where the file are being loaded from another source, so it believes that they are missing. This causes no issues to the page or code itself as everything loads and works as intended. 
+
+#### HTML Test 1
+![HTML Validation](docs/Testing/html1.png)
+
+#### HTML Test 2
+![HTML Validation](docs/Testing/html2.png)
 
 
 ### CSS Validation
+https://jigsaw.w3.org/css-validator/#validate_by_input
+Using Jigsaw to validate my css, i did a full check and there was no errors within the css. Most of the css code is commented to what it does / targets where a description may be needed for developers reading the CSS.
+
+
+#### CSS Test 
+![CSS Validation](docs/Testing/css-test.png)
 
 
 ### JavaScript Validation
+https://codebeautify.org/jsvalidate
+While testing the JavaScript there was a few errors. The javascript works and there no major issues however the validators picked up on some code i had entered that is currently being implemented into a new feature. Once taken out the error codes were small fixes such as spacing. I have left the star rating system javascript in the code as it is currently being worked on.
 
+#### JavaScript Test
+![JavaScript Validation](docs/Testing/Javascript.png)
 
 ### Python Validation
+For the python Validation i used the Code institute python checker. I went through every file idividually checking for errors to only come across a few amount which was targetted at lines being slightly too long. The rest of the code came through great and no issues were found while testing.
 
+#### Python Test 1
+![Python Validation](docs/Testing/python-test-1.png)
 
-### Automated Testing
-Django tests to cover filters, forms, views, and models, helping to maintain data accuracy and consistency across the site.
+#### Python Test 2
+![Python Validation](docs/Testing/python-test-2.png)
 
+#### Python Test 3
+![Python Validation](docs/Testing/python-test-3.png)
 
 ### Manual Testing
-User story checks manually
+While automated testing is highly effective at identifying bugs, certain issues—such as slight visual inconsistencies on the frontend or unexpectedly missing buttons—can be challenging to detect. Verifying that the frontend appears as intended is particularly difficult because it’s hard to define precise criteria for automated tests. To address this, manual testing was also conducted, focusing on user stories to simulate real-world interactions. Additionally, a few smaller tests were written in user story format to maintain consistency.
 
 | **User Stories** |  Tested |  Works As Intended |
 |  --- | --- | --- |
-| As an **admin**, I can **1** | ✅ | ✅
-| As an **admin** I can **1** |✅ | ✅
-| As an **admin** I can **1** |✅ | ✅
-| As an **admin** I **1** |✅ | ✅
-| As an **unregistered user** I **1** |✅ | ✅
-| As an **unregistered user** I **1** |✅ | ✅
-| As an **unregistered user** I **1** |✅ | ✅
-| As a **unregistered user**, I can **1** |✅ | ✅
-| As a **unregistered user**, I can **1** |✅ | ✅
-| As a **unregistered user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
-| As a **user**, I **1** |✅ | ✅
-| As a **user**, I **1** |✅ | ✅
-| As a **user**, I can **1** |✅ | ✅
+| As an **admin**, I can **Enter the database to approve comments and suggestions** | ✅ | ✅
+| As an **admin** I can **Delete other peoples recipes or suggestions** |✅ | ✅
+| As an **admin** I can **Use the CRUD functionality to it's full potential** |✅ | ✅
+| As an **admin** I can **See the approval messages that are awaiting pending on the website pages** |✅ | ✅
+| As an **unregistered user** I cannot **Access other peoples recipes to edit or delete** |✅ | ✅
+| As an **unregistered user** I cannot **gain access to the admin panel** |✅ | ✅
+| As an **unregistered user** I can **scroll through the recipes and enjoy browsing the page** |✅ | ✅
+| As a **unregistered user**, I can **Read the details of the recipes** |✅ | ✅
+| As a **unregistered user**, I cannot **Log into the site without first signing up** |✅ | ✅
+| As a **unregistered user**, I can **use the register page to create an account** |✅ | ✅
+| As a **user**, I can **log in using my details** |✅ | ✅
+| As a **user**, I can **leave a recipes on the recipes page** |✅ | ✅
+| As a **user**, I can **edit delete and update the recipe** |✅ | ✅
+| As a **user**, I can **leave a suggestion** |✅ | ✅
+| As a **user**, I can **edit delete and update suggestions** |✅ | ✅
+| As a **user**, I can **see confirmation messages whenever i change a suggestion or recipes** |✅ | ✅
+| As a **user**, I can **see where required fields need to be filled out** |✅ | ✅
+
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -360,6 +441,9 @@ DATABASE_URL
 SECRET_KEY
 10. Click the "Deploy" button to deploy the app
 
+#### Heroku Build Process
+![Heroku Build](docs/Testing/heroku-build.png)
+
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -369,6 +453,8 @@ SECRET_KEY
 * [YouTube](https://www.youtube.com/)
 * [Django docs](https://www.djangoproject.com/)
 * [Crispyforms docs](https://django-crispy-forms.readthedocs.io/en/latest/)
+* [Chat Gpt](https://chatgpt.com/)
+
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -387,6 +473,7 @@ I must also credit Mars Oakley and Guy Steele-Perkins from my WECA Boootcamp pro
 ## Acknoweledgement
 Ran out of time to do/finish the README.MD
 future updates to come to the website and the readme.
+All Images were generated by AI with Chat gpt or taken and uploaded by myself.
 
 I have gained feedback on my submission and decided to implement some of the features mentioned. Check the updates Section of the readme.md.
 
