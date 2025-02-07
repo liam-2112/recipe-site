@@ -95,6 +95,7 @@ In developing my Recipe Manager web app, I adopted Agile methodology to ensure f
 ![Project board](docs/wireframes/project-board.png)
 
 #### Kanban Board Overview
+The project board was created to help develop the project down specific paths to meet all needed criteria. This approach was crucial in helping to plan what section would be tackled next and it is a very good approach if there are multiple people working towards a project goal.
 
 ### Sprints
 
@@ -105,17 +106,27 @@ In developing my Recipe Manager web app, I adopted Agile methodology to ensure f
 ### User Stories Overview
 
 ### List of User Stories
+Here there will be links to my user stories for each subject. The user stories were created to try and get the site to meet certain criteria to a high standard.
+
 **Registration**
-- [User registration](https://github.com/liam-2112/recipe-site/issues/2)
-- [User login](https://github.com/liam-2112/recipe-site/issues/3)
-- [User logout](https://github.com/liam-2112/recipe-site/issues/5)
+- [User Registration](https://github.com/liam-2112/recipe-site/issues/2)
+- [User Login](https://github.com/liam-2112/recipe-site/issues/3)
+- [User Logout](https://github.com/liam-2112/recipe-site/issues/5)
 
 **Features**
 - [Home Page](https://github.com/liam-2112/recipe-site/issues/1)
-- [Home Page]()
+- [Recipes List](https://github.com/liam-2112/recipe-site/issues/7)
 
 **Admin**
 - [Quality Control](https://github.com/liam-2112/recipe-site/issues/6)
+- [Dashboard](https://github.com/liam-2112/recipe-site/issues/12)
+
+**User**
+- [Confirmation Feedback](https://github.com/liam-2112/recipe-site/issues/11)
+- [Recipe Information](https://github.com/liam-2112/recipe-site/issues/10)
+- [Choose A Recipe For Me](https://github.com/liam-2112/recipe-site/issues/4)
+- [Save Recipes](https://github.com/liam-2112/recipe-site/issues/9)
+- [Upvote Recipes](https://github.com/liam-2112/recipe-site/issues/8)
 
 
 ##### [ Back To Table Of Contents ](#table-of-contents)

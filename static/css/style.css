@@ -118,6 +118,10 @@ body {
     object-fit: cover;
   }
 
+.card-images {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
 
 .link {
     text-decoration: none;

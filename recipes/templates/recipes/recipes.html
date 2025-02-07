@@ -18,15 +18,15 @@
     {% endif %}
 
     <!-- Recipe Cards with Pagination -->
-    <div class="row">
+    <div class="row justify-content-center">
         {% for item in page_obj %}
-        <div class="col-xl-6 col-lg-6 col-md-6 mb-4">
+        <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
             <div class="card h-100">
                 <a href="{% url 'recipe_detail' item.id %}" class="text-decoration-none text-white">
                     {% if "placeholder" in item.image.url %}
                     <img src="{% static 'images/empty-plate.webp' %}" alt="placeholder-image" class="card-img-top">
                     {% else %}
-                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-img-top">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-img-top card-images">
                     {% endif %}
 
                     <div class="card-body">
