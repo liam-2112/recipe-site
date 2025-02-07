@@ -87,7 +87,7 @@ The goals of the website is to bring people together who can share recipes and w
 Before starting the project i had some color schemes in my head ready to use. The use of darker background colors such as black and grey, with a strong orange color for borders really makes the content stand out for me. Mixed with images i find the colors i've used for the website are not too bright and not too dark.
 
 ### Fonts
-For the fonts i have used sans seriff. This may be subject to change in future updates.
+For the fonts i have used sans seriff to keep the page layout simple. This may be subject to change in future updates.
 
 ### Agile Methodologies
 In developing my Recipe Manager web app, I adopted Agile methodology to ensure flexibility, continuous improvement, and efficient project management. The use of Agile allowed for iterative development, enabling me to frequently reassess and adjust the project scope.
@@ -98,12 +98,15 @@ In developing my Recipe Manager web app, I adopted Agile methodology to ensure f
 The project board was created to help develop the project down specific paths to meet all needed criteria. This approach was crucial in helping to plan what section would be tackled next and it is a very good approach if there are multiple people working towards a project goal.
 
 ### Sprints
+In the first sprint the goal was to get the MVP(Minimal Viable Product) in place. This was achieved but had a few known issues.
+The second sprint has been to include more features to meet a better standard user experience. A lot of the second sprint was adding files to the readme.MD.
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
 ## User Stories
 
 ### User Stories Overview
+The user stories has been a great way to plan out a project. Getting all the idea's ready then seeing if they are possible to create really helps to drive th project towards it's goal.
 
 ### List of User Stories
 Here there will be links to my user stories for each subject. The user stories were created to try and get the site to meet certain criteria to a high standard.
@@ -133,11 +136,13 @@ Here there will be links to my user stories for each subject. The user stories w
 
 ## Wireframes
 
-Balsamiq Wireframes
+Balsamiq Wireframes was used to create a base idea for the website. The idea's that have been drawn up only act as a guide to what the site should look like. the site may look different once it has been developed and a better layout could be taken into consideration.
+
+### large screens - Home Page
+![user diagram](docs/wireframes/wireframe-home.png)
 
 ### Laptop - Home Page
 ![user diagram]()
-
 
 ### Phone - Home Page
 ![user diagram]()
