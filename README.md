@@ -24,7 +24,6 @@ Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" tar
 4. [wireframes](#wireframes)
 5. [Database Planning](#database-planning)
     - [ER Diagram](#er-diagram)
-    - [User Flow Diagram](#user-flow-diagram)
 6. [Features](#features)
     - [Home Page](#home-page)
     - [Recipes Page](#recipes-page)
@@ -47,11 +46,6 @@ Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" tar
     - [Automated Testing](#automated-testing)
     - [Manual Testing](#manual-testing)
 10. [Deployment](#deployment)
-    - [Connecting to GitHub](#connecting-to-github)
-    - [Django Project Setup](#django-project-setup)
-    - [Cloudinary API](#cloudinary-api)
-    - [PostgreSQL](#postgresql)
-    - [Heroku deployment](#heroku-deployment)
 11. [Resources](#resources)
 12. [Credits](#credits)
 13. [Acknowledgements](#acknowledgements)
@@ -138,28 +132,62 @@ Here there will be links to my user stories for each subject. The user stories w
 
 Balsamiq Wireframes was used to create a base idea for the website. The idea's that have been drawn up only act as a guide to what the site should look like. the site may look different once it has been developed and a better layout could be taken into consideration.
 
-### large screens - Home Page
+### Large Screens
+### Home Page
 ![user diagram](docs/wireframes/wireframe-home.png)
 
-### Laptop - Home Page
-![user diagram]()
+### Recipes Page
+![user diagram](docs/wireframes/wireframe-recipes.png)
 
-### Phone - Home Page
-![user diagram]()
+### Suggestions Page
+![user diagram](docs/wireframes/wireframe-suggestions.png)
+
+### Suggestions - Logged In Page
+![user diagram](docs/wireframes/wireframe-signedin-suggestion.png)
+
+### Sign Up Page
+![user diagram](docs/wireframes/wireframes-register.png)
+
+### Login Page
+![user diagram](docs/wireframes/wireframe-sign%20up.png)
+
+### Logout Page
+![user diagram](docs/wireframes/wireframe-signout.png)
+
+### Confirmation Messages
+![user diagram](docs/wireframes/wireframe-message.png)
+
+
+### Mobile
+### Home Page
+![user diagram](docs/wireframes/wireframe-mobhome.png)
+
+### Recipe Page
+![user diagram](docs/wireframes/wireframe-mobrecipe.png)
+
+### Suggestions Page
+![user diagram](docs/wireframes/wireframe-mobsuggestions.png)
+
+### Sign Up Page
+![user diagram](docs/wireframes/wireframe-mobregister.png)
+
+### Login Page
+![user diagram](docs/wireframes/wireframe-mobsignin.png)
+
+### Logout Page
+![user diagram](docs/wireframes/wireframe-mobsignout.png)
+
+### Navigation Bar
+![user diagram](docs/wireframes/wireframe-mobextendednav.png)
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
 ## Database Planning
 
 ### ER Diagram
+As part of the planning I have made an ER diagram to show how the database would be connected for the project. I have done this on paper but plan to transfer this into a diagram planner in a future update to allow the diagram to be clearer.
 
 ![ER diagram]()
-
-### User Flow Diagram
-
-
-![user flow diagram]()
-
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -167,22 +195,54 @@ Balsamiq Wireframes was used to create a base idea for the website. The idea's t
 ## Features
 
 ### Home Page
+![Home](docs/project-images/project-home.png)
+![Mobile Home](docs/project-images/mob-home.png)
 
 ### Recipes Page
+![Recipes](docs/project-images/recipes.png)
+![Mobile Recipes](docs/project-images/mob-recipe.png)
+![Recipes detail](docs/project-images/recipe-detail-logout.png)
 
 ### Suggestions Page
+![Suggestions](docs/project-images/suggestions.png)
+![Suggestions Logged In](docs/project-images/suggestions-sign.png)
+![Mobile Suggestions](docs/project-images/mob-sug-sign.png)
+![Mobile Suggestions Logged In](docs/project-images/mob-sug-sign-2.png)
 
 ### Registration Page
+![Sign Up](docs/project-images/signup.png)
+![Mobile Sign Up](docs/project-images/mob-signup.png)
 
 ### Log In Page
+![Log In](docs/project-images/signin.png)
+![Mobile Log In](docs/project-images/mob-signin.png)
 
 ### Log Out Page
+![Log Out](docs/project-images/signout.png)
+![Mobile Log Out](docs/project-images/mob-signout.png)
 
 ### Nav Bar And Footer
+![Navigation Bar](docs/project-images/nav.png)
+![Footer](docs/project-images/footer.png)
+![Mobile Navigation Bar](docs/project-images/mobnav.png)
+
 
 ### Confirmation Messages
+![Log In Confirm](docs/project-images/confirm.png)
+![Delete Suggestion Confirm](docs/project-images/delete-confirm.png)
+![Delete Recipe Confirm](docs/project-images/delete-recipe-confirm.png)
+![Sign Out Confirmation](docs/project-images/signout-confirm.png)
+![Suggestion Submission](docs/project-images/sug-sub-aprove-wait.png)
+![Suggestion Update](docs/project-images/sug-update-aprove-wait.png)
+![Required Fields](docs/project-images/required-fields.png)
 
 ### CRUD functionality
+![Edit And Delete Suggestions](docs/project-images/edit-delete.png)
+![Update Suggestion](docs/project-images/sug-update.png)
+![Add New Recipe](docs/project-images/new-recipe.png)
+![Edit Recipe Top](docs/project-images/edit-rec.png)
+![Edit Recipe Bottom](docs/project-images/edit-rec-2.png)
+![Recipe Edit And Delete](docs/project-images/recipe-detail.png)
 
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
@@ -191,6 +251,13 @@ Balsamiq Wireframes was used to create a base idea for the website. The idea's t
 ## Future Features
 
 ### User Page
+In a future update to the website I plan to add a page where the logged in user can save the recipes that they like from the recipes pages.
+
+### Randomiser
+I plan to make a button that links to the user Page that allows the device to randomly pick an item from the saved recipes. This will be a fun extra addition to the site to help people decide what food to eat for the day.
+
+### Recipe Comments
+In a future update there will be comments implemented to each users recipes. I will be making sure that the comments are authorised before appearing to stop any harmful messaging and to maintain quality control.
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
@@ -268,15 +335,30 @@ User story checks manually
 
 ## Deployment
 
-### Connecting To GitHub
-
-### Django Project Setup
-
-### Cloudinary API
-
-### PostgreSQL
-
 ### Heroku Deployment
+Deployment with Heroku
+This project was deployed to Heroku, which integrates well with GitHub for continuous deployment. The deployment steps can be followed as below:
+
+1. Create a database in Code Institute CI.(If you are not a CI student, use another means to set up a Django compatible database)
+2. Clone the repository.
+3. Create an env.py file with the following file contents.
+
+import os
+os.environ.setdefault("DATABASE_URL", "<YOUR DATABASE URL>")
+os.environ.setdefault("SECRET_KEY", "<GENERATED SECRET KEY>")
+os.environ.setdefault("CLOUDINARY_URL", "<YOUR CLOUDINARY URL>")
+
+env.py file contains sensitive information. Make sure not to push it.
+
+4. Run pip3 install -r requirements.txt to install the dependencies.
+5. Run python3 manage.py migrate to initialise your database.
+6. Run python3 manage.py createsuperuser to create a superuser.
+7. Login to Heroku and create a new deployment.
+8. Connect the Heroku app to your GitHub repo
+9. Create the following configuration variables (DO NOT CREATE DEBUG.):
+DATABASE_URL
+SECRET_KEY
+10. Click the "Deploy" button to deploy the app
 
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
@@ -294,6 +376,8 @@ User story checks manually
 I give credit to https://github.com/Anka-S/hata-na-tata. I was inspired by their work and the layout was very similar to what i wanted to use myself.
 I have used their code as a template and changed bits to meet what i need. Some bits of code are still the same, But with future updates i plan to change the code to fit better with my project and the features.
 
+I have seen a good table style used in https://github.com/CrazyEggz/ci-fridge-pal/tree/main projects readme.MD. I have Implemented this into my readme so i give credit to this project for the table styling.
+
 I give credit to Code Institute for helping me through this journey and for giving me code i have used from the LMS Django walkthrough. Thank you to all the facilitators for being there to help too.
 
 I must also credit Mars Oakley and Guy Steele-Perkins from my WECA Boootcamp program for helping me to understand some issues such as merging.
@@ -302,10 +386,16 @@ I must also credit Mars Oakley and Guy Steele-Perkins from my WECA Boootcamp pro
 
 ## Acknoweledgement
 Ran out of time to do/finish the README.MD
-future updates to come to the website and the readme
+future updates to come to the website and the readme.
+
+I have gained feedback on my submission and decided to implement some of the features mentioned. Check the updates Section of the readme.md.
+
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
 ## Updates
+
+**sprint 2**
+I have updated the website to display the recipes in a new way. The reason for this choice was because there were errors and bugs around the accordian style i had previously set up. It is now set to a card system where if you click the card it takes you to a page with more information on the recipe. The page now has pagination so it will display a set amount of recipes per page allowing for a better user experience. The Users now may also upload their own recipes to the site.
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
