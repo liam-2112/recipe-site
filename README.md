@@ -5,7 +5,6 @@ Recipe Manager is an innovative online platform that combines the functionality 
 
 Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" target="_blank">Recipe Manager</a>
 
-![Responsive Devices View]()
 
 ## Table of Contents
 1. [UX - User Experience](#ux---user-experience)
