@@ -62,15 +62,18 @@ Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" tar
 
 ### Overview
 
+The Recipe Manager website is designed to help people discover new ways of cooking and finding new foods. The aim of the site is to be simple and easy to navigate while allowing the user to like and save foods that they find while on the site. It was also made with the possibility in mind of bringing out hidden family recipes that people may want to share with the world.
 
 ### Design Inspiration
 
+The inspiration for the design of this website came from the idea of having a food social site where you scroll and save the items you think you may enjoy. There will be a chance to also have this as a social too with future updates, but the main purpose of the site is to be able to find recipes you might not have come across before.
 
 ### Target User
 
-- **Experienced Cooks**:
-- **Cooks With No Experience**:
-- **People Looking To Discover New Recipes**:
+- **Experienced Cooks**: Cooks with experience that could add recipe ideas to the site, who could also give tips to other recipes on the site.
+- **Cooks With No Experience**: Cooks with no experience looking to learn how to cook dishes but unsure where to start. The site will have a social aspect to it where others can offer advice or help with instructions to cooking items.
+- **Cooks Looking To Discover New Recipes**: Cooks who just want to scroll through recipes while they have some downtime in the hopes they could find inspiration for new dishes.
+- **Cooks Looking To Share Recipes**:Cook enthusiasts who want to give people the best options of food they can.
 
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
@@ -78,16 +81,18 @@ Live site: <a href="https://recipe-manager-site-9b7bfd4b2c5e.herokuapp.com/" tar
 ## Project Planning
 
 ### site goals
+The goals of the website is to bring people together who can share recipes and want to teach or learn how to cook dishes. There will be a user page where the user can keep recipes they like stored. 
 
 ### Color Scheme
+Before starting the project i had some color schemes in my head ready to use. The use of darker background colors such as black and grey, with a strong orange color for borders really makes the content stand out for me. Mixed with images i find the colors i've used for the website are not too bright and not too dark.
 
 ### Fonts
+For the fonts i have used sans seriff. This may be subject to change in future updates.
 
 ### Agile Methodologies
+In developing my Recipe Manager web app, I adopted Agile methodology to ensure flexibility, continuous improvement, and efficient project management. The use of Agile allowed for iterative development, enabling me to frequently reassess and adjust the project scope.
 
-My Kanban board can be viewed [here]().
-
-![Project board]()
+![Project board](docs/wireframes/project-board.png)
 
 #### Kanban Board Overview
 
@@ -101,14 +106,17 @@ My Kanban board can be viewed [here]().
 
 ### List of User Stories
 **Registration**
-- [User registration]()
-- [User login]()
-- [User logout]()
+- [User registration](https://github.com/liam-2112/recipe-site/issues/2)
+- [User login](https://github.com/liam-2112/recipe-site/issues/3)
+- [User logout](https://github.com/liam-2112/recipe-site/issues/5)
 
-**CRUD**
-- [Add Suggestions]()
+**Features**
+- [Home Page](https://github.com/liam-2112/recipe-site/issues/1)
+- [Home Page]()
 
-**Notification & Alerts**
+**Admin**
+- [Quality Control](https://github.com/liam-2112/recipe-site/issues/6)
+
 
 ##### [ Back To Table Of Contents ](#table-of-contents)
 
