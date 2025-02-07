@@ -10,7 +10,7 @@ class MenuItem(models.Model):
                             null=True, blank=True)
     ingredients = models.TextField(max_length=5000)
     instructions = models.TextField(blank=True, null=True)
-    description = models.TextField(max_length=5000)
+    description = models.TextField(max_length=140)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipes')  # Ownership field

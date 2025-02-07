@@ -64,33 +64,9 @@ body {
     align-self: center;
 }
 
-/* Sections list on menu page */
-.list-group {
-    list-style: none;
-    justify-content: center;
-    align-self: center;
-}
-
-.list-group a {
-    color: #fff;
-    padding: 0 15px;
-}
-
-.list-group a:hover {
-    color: #9e9d9bf3;
-    border: 0;
-}
-
-.list-group-item {
-    background-color: transparent;
-    border: transparent;
-}
-
-.list-group-item.active {
-    z-index: 2;
-    color: #9e9d9bf3;
-    background-color: #ffffff00;
-    border-color: #e0e4e900;
+.clear {
+    text-decoration: none;
+    color: white;
 }
 
 .scrollmenu {
@@ -135,6 +111,7 @@ body {
     font-weight: 200;
 }
 
+
 .img-container {
     overflow: hidden;
 }
@@ -156,6 +133,7 @@ body {
     background-color: #a94c00;
     color: black;
 }
+
 
 /* Styling authorisation models */
 .auth-model {

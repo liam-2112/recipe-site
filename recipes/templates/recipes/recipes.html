@@ -12,8 +12,8 @@
 
     <!-- Add Recipe Button for Logged-in Users -->
     {% if user.is_authenticated %}
-    <div class="text-end mb-3">
-        <a href="{% url 'add_recipe' %}" class="btn btn-primary">Add New Recipe</a>
+    <div class="text-center mb-4">
+        <a href="{% url 'add_recipe' %}" class="btn btn-signup">Add New Recipe</a>
     </div>
     {% endif %}
 
@@ -22,17 +22,16 @@
         {% for item in page_obj %}
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <a href="{% url 'recipe_detail' item.id %}" class="text-decoration-none text-dark">
+                <a href="{% url 'recipe_detail' item.id %}" class="text-decoration-none text-white">
                     {% if "placeholder" in item.image.url %}
-                    <img src="{% static 'images/default.webp' %}" alt="placeholder-image" class="card-img-top">
+                    <img src="{% static 'images/empty-plate.webp' %}" alt="placeholder-image" class="card-img-top">
                     {% else %}
                     <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-img-top">
                     {% endif %}
 
                     <div class="card-body">
-                        <h5 class="card-title text-center">{{ item.title }}</h5>
+                        <h4 class="card-title text-center">{{ item.title }}</h4>
                         <p class="card-text description-text">{{ item.description|safe }}</p>
-                        <p class="card-text ingredients-text">Ingredients: {{ item.ingredients|safe }}</p>
                     </div>
                 </a>
             </div>
@@ -46,7 +45,7 @@
             <ul class="pagination">
                 {% if page_obj.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <a class="page-link btn-signup" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
@@ -54,13 +53,13 @@
 
                 {% for num in page_obj.paginator.page_range %}
                     <li class="page-item {% if page_obj.number == num %}active{% endif %}">
-                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        <a class="page-link btn-signup" href="?page={{ num }}">{{ num }}</a>
                     </li>
                 {% endfor %}
 
                 {% if page_obj.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <a class="page-link btn-signup" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
