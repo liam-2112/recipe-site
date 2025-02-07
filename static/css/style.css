@@ -64,10 +64,6 @@ body {
     align-self: center;
 }
 
-.clear {
-    text-decoration: none;
-    color: white;
-}
 
 .scrollmenu {
     overflow-x: auto;

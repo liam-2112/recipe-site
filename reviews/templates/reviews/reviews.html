@@ -14,7 +14,7 @@
   <div class="row m-0">
     {% for review in reviews %}
     {% if review.approved or review.author == user %}
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
+    <div class="col-12 col-md-6 col-xl-4 mb-4">
       <div class="card m-0 h-100 {% if not review.approved and review.author == user %}faded{% endif %}">
         <div class="card-body">
           <!-- Take idea for star ratings from this project - https://github.com/doctypeKieran/ci-capstone-project -->

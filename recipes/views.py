@@ -9,7 +9,7 @@ from django.contrib import messages
 # Recipe List View with Pagination
 def recipe_list(request):
     recipes = MenuItem.objects.all().order_by('-id')  # Latest recipes first
-    paginator = Paginator(recipes, 9)               # 9 recipes per page
+    paginator = Paginator(recipes, 8)               # 8 recipes per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'recipes/recipes.html', {'page_obj': page_obj})
